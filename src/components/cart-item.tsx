@@ -13,23 +13,26 @@ interface CartItemProps {
 
 export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
   return (
-    <div className="flex justify-center w-96 items-center border rounded-lg mb-4 pl-2 mr-2 ">
-      <div className="flex items-center gap-5">
-        <div className="relative w-20 h-20">
-          <Image
-            src={item.images[0]}
-            alt={item.title}
-            width={400}
-            height={400}
-            className="w-full h-full object-contain object-center rounded-md hover:scale-105 duration-300"
-          />
-        </div>
-        <div>
-          <h3 className="font-medium text-sm line-clamp-2">{item.title}</h3>
-          <p className="text-sm text-gray-500">${item.price * item.quantity}</p>
-        </div>
+    <div className="flex justify-between items-center w-full sm:w-96 bg-white border rounded-lg mb-4 p-4">
+      {/* Image */}
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+        <Image
+          src={item.images[0]}
+          alt={item.title}
+          width={400}
+          height={400}
+          className="w-full h-full object-contain object-center rounded-md"
+        />
       </div>
-      <div className="flex items-center gap-3 pr-5 ml-5">
+
+      {/* Item Title and Price */}
+      <div className="flex-1 ml-3">
+        <h3 className="font-medium text-sm sm:text-base line-clamp-2">{item.title}</h3>
+        <p className="text-sm text-gray-500">${item.price * item.quantity}</p>
+      </div>
+
+      {/* Quantity Controls and Remove */}
+      <div className="flex items-center gap-2 sm:gap-4 ml-3">
         <Button
           size="icon"
           variant="outline"
@@ -52,7 +55,7 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
           variant="destructive"
           onClick={() => onRemove(item.id)}
         >
-          <Trash2 className="h-2 w-2" />
+          <Trash2 className="h-4 w-4" />
         </Button>
       </div>
     </div>

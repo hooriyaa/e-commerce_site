@@ -12,16 +12,16 @@ export default function CartPage() {
     <div className="pt-7 sm:pt-0 sm:mx-14 mx-5 mb-12">
       {items.length === 0 ? (
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 min-h-screen bg-white md:pt-8">
-          {/* items */}
+          {/* Items */}
           <div className="col-span-2 bg-white">
             <Cartcard />
           </div>
-          {/* order summary */}
+          {/* Order Summary */}
           <OrderSummary />
         </div>
       ) : (
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 min-h-screen bg-white md:pt-8">
-          <div className="col-span-2 bg-white">
+          <div className="col-span-2 bg-white space-y-4">
             {items.map((item) => (
               <CartItem
                 key={item.id}
@@ -31,7 +31,7 @@ export default function CartPage() {
               />
             ))}
           </div>
-          {/* order summary */}
+          {/* Order Summary */}
           <OrderSummary />
         </div>
       )}

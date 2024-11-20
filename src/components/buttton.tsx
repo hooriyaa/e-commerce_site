@@ -12,17 +12,20 @@ const Buttton = () => {
   useEffect(() => {
     setHydrated(true);
   }, []);
+
   return (
-    <>
-      <Button variant="outline" size="icon" className="relative">
-        <ShoppingCart className="h-5 w-5" />
-        {hydrated && items.length > 0 && (
-          <Badge variant="destructive" className="absolute -top-2 -right-2">
-            {items.length}
-          </Badge>
-        )}
-      </Button>
-    </>
+    <Button
+      variant="outline"
+      size="icon"
+      className="relative p-1 sm:p-2"
+    >
+      <ShoppingCart className="h-5 w-5 sm:h-6 sm:w-6" />
+      {hydrated && items.length > 0 && (
+        <Badge variant="destructive" className="absolute -top-2 -right-2">
+          {items.length}
+        </Badge>
+      )}
+    </Button>
   );
 };
 
