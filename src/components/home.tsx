@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroimage from "../../public/pictures/hero.jpg";
 import React from "react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,9 +16,11 @@ const Hero = () => {
           HAS ARRIVED
         </h1>
         <div className="flex justify-center items-center">
-          <button className="inline-flex  text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-500 rounded text-lg duration-300 scroll-m-20 tracking-tight">
-            Shop Now
-          </button>
+          <Link href="/products">
+            <button className="inline-flex  text-white bg-orange-400 border-0 py-2 px-6 focus:outline-none hover:bg-orange-500 rounded text-lg duration-300 scroll-m-20 tracking-tight">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
       <div className="lg:max-w-lg md:pr-20 lg:w-full md:w-1/2 w-5/6 ">

@@ -71,6 +71,7 @@ const ProductPage = () => {
                   <h1 className="text-gray-800 border-b pb-2 text-lg font-semibold  tracking-tight transition-colors  line-clamp-2 ">
                     {product.title}
                   </h1>
+                  {/* price */}
                   <p className="text-black pb-2 mt-2 text-base font-semibold tracking-tight line-clamp-1">
                     ${product.price.toFixed(2)}
                   </p>

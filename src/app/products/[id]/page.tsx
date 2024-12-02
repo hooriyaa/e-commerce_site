@@ -32,13 +32,42 @@ export default async function ProductPage({
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl">{product.title}</CardTitle>
+              {/* rating */}
+              <div className="rating rating-sm">
+                <input
+                  type="radio"
+                  name="rating-6"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-6"
+                  className="mask mask-star-2 bg-orange-400"
+                  defaultChecked
+                />
+                <input
+                  type="radio"
+                  name="rating-6"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-6"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+                <input
+                  type="radio"
+                  name="rating-6"
+                  className="mask mask-star-2 bg-orange-400"
+                />
+              </div>
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xl font-bold">
                   ${product.price.toFixed(2)}
                 </span>
-                <Badge variant="secondary">{product.category.name}</Badge>
+                <Badge variant="secondary">{product.category}</Badge>
               </div>
               <p className="text-gray-600">{product.description}</p>
             </CardContent>
@@ -56,7 +85,7 @@ export default async function ProductPage({
               <dl className="space-y-2">
                 <div className="flex justify-between">
                   <dt className="text-gray-600">Category</dt>
-                  <dd className="font-medium">{product.category.name}</dd>
+                  <dd className="font-medium">{product.category}</dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-gray-600">Product ID</dt>
